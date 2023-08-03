@@ -10,8 +10,8 @@
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Add Matrix operation
+- [x] Add Matrix operation
     - [x] Matrix multiplication
-    - [ ] Matrix subtraction
-    - [ ] Matrix addition
+    - [x] Matrix subtraction
+    - [x] Matrix addition
 - [ ] Make it more user friendly

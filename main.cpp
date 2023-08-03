@@ -3,7 +3,9 @@
 int main()
 {
     int i_1 = 0, j_1 = 0, i_2 = 0, j_2 = 0;
-
+    char c;
+    std::cout << "choose operation (*,+,-) : ";
+    std::cin >> c;
     std::cout << "enter matrix 1 rows : ";
     std::cin >> i_1;
     std::cout << "enter matrix 1 columns : ";
@@ -34,7 +36,7 @@ int main()
     }
 
     // show user data
-        std::cout << "/////////////////////////////////matrix1/////////////////////////////////" << std::endl;
+    std::cout << "/////////////////////////////////matrix1/////////////////////////////////" << std::endl;
     for (int i = 0; i < i_1; i++)
     {
         for (int j = 0; j < j_1; j++)
@@ -57,16 +59,44 @@ int main()
         }
     }
     // multiple
-    for (int i = 0; i < i_1; i++)
+
+    if (c == '*')
     {
-        for (int j = 0; j < j_2; j++)
+        for (int i = 0; i < i_1; i++)
         {
-            int sum = 0;
-            for (int k = 0; k < j_1; k++)
+            for (int j = 0; j < j_2; j++)
             {
-                sum += matrix_1[i][k] * matrix_2[k][j];
+                int sum = 0;
+                for (int k = 0; k < j_1; k++)
+                {
+                    sum += matrix_1[i][k] * matrix_2[k][j];
+                }
+                res[i][j] = sum;
             }
-            res[i][j] = sum;
+        }
+    }
+    else if (c == '+')
+    {
+        for (int i = 0; i < i_1; i++)
+        {
+            for (int j = 0; j < j_1; j++)
+            {
+                int sum = 0;
+                sum = matrix_1[i][j] + matrix_2[i][j];
+                res[i][j] = sum;
+            }
+        }
+    }
+    else if (c == '-')
+    {
+        for (int i = 0; i < i_1; i++)
+        {
+            for (int j = 0; j < j_1; j++)
+            {
+                int sum = 0;
+                sum = matrix_1[i][j] - matrix_2[i][j];
+                res[i][j] = sum;
+            }
         }
     }
     std::cout << "/////////////////////////////////res/////////////////////////////////" << std::endl;
